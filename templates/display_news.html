@@ -1,0 +1,60 @@
+{% include 'index.html' %}
+{% block content %}
+
+<div class="card-deck">
+  <div class="row">
+    {% for json in l%}
+<!--    <div class="col-sm-3"></div>-->
+      <div class="col-md-3" style="margin:3%;">
+        <div class="card" style="min-width:100%;max-width:110%" id={{loop.index}}>
+          <img class="card-img-top" src="{{json.image_url}}" alt="Card image cap" style="max-height:20rem;" >
+          <div class="card-body">
+            <h5 class="card-title">{{json.headline}}</h5>
+            <p class="card-text">{{json.abstract}}</p>
+            <div style="margin:auto;">
+              <form action="{% url 'News:save' id=json.id user_id=user.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary btn-sm" value="Save">
+              </form>
+            </div>
+            <div>
+              <a href="{{json.web_url}}" style="text-decoration:none;">SeeMore</a>
+            </div>
+          </div>
+          <div class="card-footer">
+            Published Date<br /><small class="text-muted">{{json.pub_date}}</small>
+          </div>
+        </div>
+      </div>
+<!--      <div class="col-sm-3"></div>-->
+    {% endfor %}
+  </div>
+<!--  <div class="card">-->
+<!--    <img class="card-img-top" src="..." alt="Card image cap">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>-->
+<!--    </div>-->
+<!--      <div style="margin:auto;">-->
+<!--          <button type="button" class="btn btn-primary btn-sm">Save</button>-->
+<!--      </div>-->
+<!--    <div class="card-footer">-->
+<!--      <small class="text-muted">Last updated 3 mins ago</small>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="card">-->
+<!--    <img class="card-img-top" src="..." alt="Card image cap">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Card title</h5>-->
+<!--      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>-->
+<!--    </div>-->
+<!--      <div style="margin:auto;">-->
+<!--          <button type="button" class="btn btn-primary btn-sm">Save</button>-->
+<!--      </div>-->
+<!--    <div class="card-footer">-->
+<!--      <small class="text-muted">Last updated 3 mins ago</small>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+
+{% endblock %}

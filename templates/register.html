@@ -1,0 +1,50 @@
+{% include 'index.html' %}
+{% block content %}
+
+<form action="{% url 'News:register_confirm' %}" method="post">
+    {% csrf_token %}
+      <div class="form-group row">
+        <label for="inputEmail" class="col-sm-3 col-form-label" style="text-align:center;font-size:1.2rem;">Email</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputFirstName" class="col-sm-3 col-form-label" style="text-align:center;font-size:1.2rem;">First_name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="inputFirstName" placeholder="first name" name="first_name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputLastName" class="col-sm-3 col-form-label" style="text-align:center;font-size:1.2rem;">Last_name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="inputLastName" placeholder="last name" name="last_name">
+        </div>
+      </div>
+        <div class="form-group row">
+        <label for="inputUsername" class="col-sm-3 col-form-label" style="text-align:center;font-size:1.2rem;">Username</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="username">
+        </div>
+      </div>
+        <div class="form-group row">
+        <label for="inputPassword1" class="col-sm-3 col-form-label" style="text-align:center;font-size:1.2rem;">Password</label>
+        <div class="col-sm-6">
+          <input type="password" class="form-control" id="inputPassword1" placeholder="Password" name="password1">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword2" class="col-sm-3 col-form-label" style="text-align:center;font-size:1.2rem;">Confirm Password</label>
+        <div class="col-sm-6">
+          <input type="password" class="form-control" id="inputPassword2" placeholder="Confirm Password" name="password2">
+        </div>
+      </div>
+        <div class="form-group row">
+              <div class="align-self-center mx-auto">
+                  <button type="submit" class="btn btn-primary mb-2" style="text-align:center;">Submit</button>
+                  <button type="submit" class="btn btn-primary mb-2" style="text-align:center;"><a href="{% url 'News:login' %}" style="text-decoration:none;">Login</a></button>
+              </div>
+        </div>
+</form>
+
+{% endblock %}
