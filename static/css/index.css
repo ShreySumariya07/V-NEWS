@@ -1,0 +1,21 @@
+html{
+    height:100%
+}
+
+body{
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+footer {
+	font-family: 'Nunito', sans-serif;
+	padding: 0.1rem;
+	text-align: center;
+	background: #ddd;
+	margin-top: auto;
+  }
+footer ul{
+	font-family: 'Nunito', sans-serif;
+	list-style: none;
+  }

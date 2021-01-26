@@ -1,6 +1,42 @@
 {% include 'index.html' %}
 {% block content %}
 
+<div class="container-fluid p-0">
+  <div style="margin-left:0.1rem;">Total Cases in World</div>
+  <div class="row" style="margin-left:0.1rem;">
+    <div class="col-2" style="margin:-0.2%;">New Cases</div>
+    <div class="col-2" style="margin:-0.2%;">Total Cases</div>
+    <div class="col-2" style="margin:-0.2%;">New Death</div>
+    <div class="col-2" style="margin:-0.2%;">Total Death</div>
+    <div class="col-2" style="margin:-0.2%;">New Recovered</div>
+    <div class="col-2" style="margin:-0.2%;">Total Recovered</div>
+    <div class="col-2" style="margin:-0.2%;">{{global_case.new_confirmed}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{global_case.total_confirm}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{global_case.new_deaths}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{global_case.total_death}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{global_case.new_recovered}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{global_case.total_recovered}}</div>
+  </div>
+</div>
+
+<div class="container-fluid p-0">
+  <div style="margin-left:0.1rem;">Total Cases in India</div>
+  <div class="row" style="margin-left:0.1rem;">
+    <div class="col-2" style="margin:-0.2%;">New Cases</div>
+    <div class="col-2" style="margin:-0.2%;">Total Cases</div>
+    <div class="col-2" style="margin:-0.2%;">New Death</div>
+    <div class="col-2" style="margin:-0.2%;">Total Death</div>
+    <div class="col-2" style="margin:-0.2%;">New Recovered</div>
+    <div class="col-2" style="margin:-0.2%;">Total Recovered</div>
+    <div class="col-2" style="margin:-0.2%;">{{india_case.new_confirmed_india}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{india_case.total_confirm_india}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{india_case.new_deaths_india}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{india_case.total_death_india}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{india_case.new_recovered_india}}</div>
+    <div class="col-2" style="margin:-0.2%;">{{india_case.total_recovered_india}}</div>
+  </div>
+</div>
+
 <div class="card-deck">
   <div class="row">
     {% for json in l%}
