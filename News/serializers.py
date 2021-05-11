@@ -1,7 +1,13 @@
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
-from rest_framework import serializers
+from rest_framework import fields, serializers
 from .models import SavedNews
+
+
+class SavedNewsShowSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SavedNews
+        fields = '__all__'
 
 
 class SavedNewsSerializer(serializers.ModelSerializer):
